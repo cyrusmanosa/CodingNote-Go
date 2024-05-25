@@ -12,7 +12,7 @@ func main() {
 
 	req, _ := http.NewRequest("GET", url, nil)
 
-	req.Header.Add("X-RapidAPI-Key", "15c31f710bmshe587124dfc6a402p110be6jsndf7effbde797")
+	req.Header.Add("X-RapidAPI-Key", "")
 	req.Header.Add("X-RapidAPI-Host", "ai-weather-by-meteosource.p.rapidapi.com")
 
 	res, _ := http.DefaultClient.Do(req)
