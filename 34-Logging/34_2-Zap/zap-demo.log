@@ -1,0 +1,6 @@
+{
+    "level" : "info", // info message
+    "ts" : 1682603216.5227678,
+    "caller" : "34_2-Zap/main.go:30", // file , project name
+    "msg" : "This is our first log message using zap!"  //info message
+}

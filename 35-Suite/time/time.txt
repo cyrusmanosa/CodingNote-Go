@@ -1,0 +1,40 @@
+以下是 Go 標準庫中 `time` 包內的所有函數及其功能說明：
+
+1. `func After(d Duration) <-chan Time`：返回一個通道，當指定的時間 `d` 過去後，通道會收到一個時間值。
+2. `func AfterFunc(d Duration, f func()) *Timer`：返回一個計時器，當時間 `d` 過去後，執行函數 `f`。
+3. `func Date(year int, month Month, day, hour, min, sec, nsec int, loc *Location) Time`：根據指定的年、月、日、時、分、秒、納秒和時區創建一個時間值 `Time`。
+4. `func LoadLocation(name string) (*Location, error)`：根據指定的時區名稱加載時區信息 `Location`，如果找不到時區則返回錯誤。
+5. `func FixedZone(name string, offset int) *Location`：創建一個固定偏移量的時區 `Location`，偏移量為秒數。
+6. `func NewTicker(d Duration) *Ticker`：返回一個計時器 `Ticker`，每隔時間 `d`，通道就會收到一個時間值。
+7. `func NewTimer(d Duration) *Timer`：返回一個計時器 `Timer`，在時間 `d` 過去後，通道就會收到一個時間值。
+8. `func Now() Time`：返回當前本地時間。
+9. `func Since(t Time) Duration`：返回從時間 `t` 到當前時間的時間間隔 `Duration`。
+10. `func Sleep(d Duration)`：讓當前 goroutine 休眠時間 `d`。
+11. `func Tick(d Duration) <-chan Time`：返回一個通道，每隔時間 `d`，通道就會收到一個時間值。
+12. `func Parse(layout, value string) (Time, error)`：將指定格式的時間字符串 `value` 解析成時間值 `Time`，格式由佈局字符串 `layout` 指定。
+13. `func ParseInLocation(layout, value string, loc *Location) (Time, error)`：將指定格式的時間字符串 `value` 解析成時間值 `Time`，並指定時區 `loc`。
+14. `func (t Time) Add(d Duration) Time`：將時間值 `t` 增加時間間隔 `d`，返回新的時間值。
+15. `func (t Time) AddDate(years int, months int, days int) Time`：將時間值 `t` 增加指定的年、月、日數量，返回新的時間值。
+16. `func (t Time) After(u Time) bool`：判斷時間值 `t` 是否在時間值 `u` 之後，返回布爾值。
+17. `func (t Time) Before(u Time) bool`：判斷時間值 `t` 是否在時間值 `u` 之前，返回布爾值。
+18. `func (t Time) Clock() (hour, min, sec int)`：返回時間值 `t` 的時、分、秒。
+19. `func (t Time) Date() (year int, month Month, day int)`：返回時間值 `t` 的年、月、日。
+20. `func (t Time) Day() int`：返回時間值 `t` 的日。
+21. `func (t Time) Equal(u Time) bool`：判斷時間值 `t` 是否等於時間值 `u`，返回布爾值。
+22. `func (t Time) Format(layout string) string`：返回時間值 `t` 根據指定的佈局字符串 `layout` 格式化後的字符串。
+23. `func (t Time) Hour() int`：返回時間值 `t` 的時。
+24. `func (t Time) In(loc *Location) Time`：將時間值 `t` 轉換為指定時區 `loc` 的時間值，返回新的時間值。
+25. `func (t Time) IsZero() bool`：判斷時間值 `t` 是否為零值，即等於時間值 `Time{}`。
+26. `func (t Time) Local() Time`：將時間值 `t` 轉換為本地時區的時間值，返回新的時間值。
+27. `func (t Time) Location() *Location`：返回時間值 `t` 所在的時區 `Location`。
+28. `func (t Time) Minute() int`：返回時間值 `t` 的分。
+29. `func (t Time) Month() Month`：返回時間值 `t` 的月份。
+30. `func (t Time) Nanosecond() int`：返回時間值 `t` 的納秒。
+31. `func (t Time) Round(d Duration) Time`：將時間值 `t` 按照指定的時間間隔 `d` 四捨五入取整，返回新的時間值。
+32. `func (t Time) Second() int`：返回時間值 `t` 的秒。
+33. `func (t Time) String() string`：返回時間值 `t` 的字符串表示。
+34. `func (t Time) Sub(u Time) Duration`：返回時間值 `t` 和時間值 `u` 的時間間隔 `Duration`，即 `t - u`。
+35. `func (t Time) Truncate(d Duration) Time`：將時間值 `t` 按照指定的時間間隔 `d` 向下取整，返回新的時間值。
+36. `func (t Time) UTC() Time`：將時間值 `t` 轉換為 UTC 時間，返回新的時間值。
+37. `func (t Time) Unix() int64`：返回時間值 `t` 距離 Unix 紀元（1970 年 1 月 1 日 00:00:00 UTC）的秒數。
+38. `func (t Time) UnixNano() int64`：返回時間值 `t` 距離 Unix 紀元的納秒數。

@@ -1,0 +1,42 @@
+以下是 Go 標準庫中 `strings` 包內的所有函數及其功能說明：
+
+1. `func Contains(s, substr string) bool`：判斷字串 `s` 是否包含子字串 `substr`，返回布爾值。
+2. `func Count(s, sep string) int`：計算字串 `s` 中子字串 `sep` 出現的次數，返回整數。
+3. `func EqualFold(s, t string) bool`：比較字串 `s` 和 `t` 是否相等，不區分大小寫，返回布爾值。
+4. `func Fields(s string) []string`：將字串 `s` 分割成子字串切片，使用空格、制表符等空白符號作為分隔符。
+5. `func HasPrefix(s, prefix string) bool`：判斷字串 `s` 是否以 `prefix` 開頭，返回布爾值。
+6. `func HasSuffix(s, suffix string) bool`：判斷字串 `s` 是否以 `suffix` 結尾，返回布爾值。
+7. `func Index(s, substr string) int`：查找子字串 `substr` 在字串 `s` 中第一次出現的位置，返回索引值，如果未找到則返回 -1。
+8. `func IndexAny(s, chars string) int`：查找字串 `s` 中任意一個字符在 `chars` 字符串中第一次出現的位置，返回索引值，如果未找到則返回 -1。
+9. `func IndexByte(s string, c byte) int`：查找字串 `s` 中字符 `c` 第一次出現的位置，返回索引值，如果未找到則返回 -1。
+10. `func IndexFunc(s string, f func(rune) bool) int`：查找字串 `s` 中第一個滿足函數 `f` 的字符出現的位置，返回索引值，如果未找到則返回 -1。
+11. `func Join(a []string, sep string) string`：將字符串切片 `a` 中的所有元素用分隔符 `sep` 連接成一個字符串。
+12. `func LastIndex(s, substr string) int`：查找子字串 `substr` 在字串 `s` 中最後一次出現的位置，返回索引值，如果未找到則返回 -1。
+13. `func LastIndexAny(s, chars string) int`：查找字串 `s` 中任意一個字符在 `chars` 字符串中最後一次出現的位置，返回索引值，如果未找到則返回 -1。
+14. `func LastIndexByte(s string, c byte) int`：查找字串 `s` 中字符 `c` 最後一次出現的位置，返回索引值，如果未找到則返回 -1。
+15. `func LastIndexFunc(s string, f func(rune) bool) int`：查找字串 `s` 中最後一個滿足函數 `f` 的字符出現的位置，返回索引值，如果未找到則返回 -1。
+16. `func Map(mapping func(rune) rune, s string) string`：將字串 `s` 中的每一個字符都映射為函數 `mapping` 返回的字符，返回新的字符串。
+17. `func Repeat(s string, count int) string`：將字串 `s` 重複 `count` 次，返回新的字符串。
+18. `func Replace(s, old, new string, n int) string`：將字串 `s` 中前 `n` 個 `old` 子字串替換為 `new` 子字串，返回新的字符串。
+19. `func Split(s, sep string) []string`：將字串 `s` 按照分隔符 `sep` 分割成子字串切片。
+20. `func SplitAfter(s, sep string) []string`：將字串 `s` 按照分隔符 `sep` 分割成子字串切片，並保留分隔符在子字串末尾。
+21. `func SplitAfterN(s, sep string, n int) []string`：將字串 `s` 按照分隔符 `sep` 分割成子字串切片，並保留分隔符在子字串末尾，最多分割 `n` 次。
+22. `func SplitN(s, sep string, n int) []string`：將字串 `s` 按照分隔符 `sep` 分割成子字串切片，最多分割 `n` 次。
+23. `func Title(s string) string`：將字串 `s` 中的每個單詞的首字母轉為大寫，返回新的字符串。
+24. `func ToLower(s string) string`：將字串 `s` 中的所有字符轉為小寫，返回新的字符串。
+25. `func ToLowerSpecial(c unicode.SpecialCase, s string) string`：將字串 `s` 中的所有字符轉為小寫，使用指定的 `unicode.SpecialCase` 處理特殊情況，返回新的字符串。
+26. `func ToTitle(s string) string`：將字串 `s` 中的所有字符轉為標題大小寫，即每個單詞的首字母轉為大寫，返回新的字符串。
+27. `func ToTitleSpecial(c unicode.SpecialCase, s string) string`：將字串 `s` 中的所有字符轉為標題大小寫，使用指定的 `unicode.SpecialCase` 處理特殊情況，返回新的字符串。
+28. `func ToUpper(s string) string`：將字串 `s` 中的所有字符轉為大寫，返回新的字符串。
+29. `func ToUpperSpecial(c unicode.SpecialCase, s string) string`：將字串 `s` 中的所有字符轉為大寫，使用指定的 `unicode.SpecialCase` 處理特殊情況，返回新的字符串。
+30. `func Trim(s string, cutset string) string`：將字串 `s` 前後去除 `cutset` 中出現的字符，返回新的字符串。
+31. `func TrimFunc(s string, f func(rune) bool) string`：將字串 `s` 前後去除滿足函數 `f` 的字符，返回新的字符串。
+32. `func TrimLeft(s string, cutset string) string`：將字串 `s` 左邊去除 `cutset` 中出現的字符，返回新的字符串。
+33. `func TrimLeftFunc(s string, f func(rune) bool) string`：將字串 `s` 左邊去除滿足函數 `f` 的字符，返回新的字符串。
+34. `func TrimPrefix(s, prefix string) string`：將字串 `s` 前綴 `prefix` 去除，返回新的字符串。
+35. `func TrimRight(s string, cutset string) string`：將字串 `s` 右邊去除 `cutset` 中出現的字符，返回新的字符串。
+36. `func TrimRightFunc(s string, f func(rune) bool) string`：將字串 `s` 右邊去除滿足函數 `f` 的字符，返回新的字符串。
+37. `func TrimSpace(s string) string`：將字串 `s` 前後去除空格符號，返回新的字符串。
+38. `func TrimSuffix(s, suffix string) string`：將字串 `s` 後綴 `suffix` 去除，返回新的字符串。
+
+以上就是 `strings` 包中所有函數的功能詳細說明。這些函數可以方便地處理字串，常用於文本處理、字符串分析等。

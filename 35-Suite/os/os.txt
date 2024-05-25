@@ -1,0 +1,47 @@
+`os` 是 Go 標準庫的一部分，提供了跨平台的操作系統功能。以下是每個函數的詳細說明（按照字母順序排列）：
+1. `Chdir(dir string) error`：將當前工作目錄更改為指定的目錄。
+2. `Chmod(name string, mode FileMode) error`：更改指定文件的權限模式。
+3. `Chown(name string, uid, gid int) error`：更改指定文件的所有者和群組 ID。
+4. `Chtimes(name string, atime time.Time, mtime time.Time) error`：更改指定文件的訪問時間和修改時間。
+5. `Clearenv()`：清除當前進程的環境變量。
+6. `Environ() []string`：返回當前進程的環境變量。
+7. `Exit(code int)`：終止當前進程並返回指定的退出碼。
+8. `Expand(s string, mapping func(string) string) string`：將字符串中的環境變量展開為它們的值。
+9. `ExpandEnv(s string) string`：將字符串中的環境變量展開為它們的值。
+10. `Getegid() int`：返回當前進程的有效群組 ID。
+11. `Getenv(key string) string`：返回指定環境變量的值。
+12. `Geteuid() int`：返回當前進程的有效用戶 ID。
+13. `Getgid() int`：返回當前進程的群組 ID。
+14. `Getgroups() ([]int, error)`：返回當前進程的附加群組 ID。
+15. `Getpagesize() int`：返回系統內存頁面的大小。
+16. `Getpid() int`：返回當前進程的進程 ID。
+17. `Getppid() int`：返回當前進程的父進程 ID。
+18. `Getuid() int`：返回當前進程的用戶 ID。
+19. `Hostname() (name string, err error)`：返回本地主機名稱。
+20. `IsExist(err error) bool`：判斷錯誤是否表示文件已存在。
+21. `IsNotExist(err error) bool`：判斷錯誤是否表示文件不存在。
+22. `IsPathSeparator(c uint8) bool`：判斷指定字節是否為路徑分隔符。
+23. `IsPermission(err error) bool`：判斷錯誤是否表示權限問題。
+24. `Lchown(name string, uid, gid int) error`：更改符號鏈接的所有者和群組 ID。
+25. `Link(oldname, newname string) error`：創建一個硬鏈接。
+26. `Mkdir(name string, perm FileMode) error`：創建一個新目錄。
+27. `MkdirAll(path string, perm FileMode) error`：創建所有不存在的目錄，並設置權限模式。
+28. `Mknod(name string, mode FileMode, dev int) error`：創建一個命名的文件節點。
+29. `PathError`：代表與文件路徑相關的錯誤。
+30. `Pipe() (r *File, w *File, err error)`：創建一個管道。
+31. `Readlink(name string) (string, error)`：返回符號鏈接指向的文件路徑。
+32. `Remove(name string) error`：刪除指定的文件或目錄。
+33. `RemoveAll(path string) error`：遞歸刪除指定的目錄及其子目錄。
+34. `Rename(oldpath, newpath string) error`：將一個文件或目錄從一個名稱重命名為另一個名稱。
+35. `SameFile(fi1, fi2 FileInfo) bool`：判斷兩個文件或目錄是否引用同一個文件系統對象。
+36. `Setenv(key, value string) error`：設置指定環境變量的值。
+37. `Symlink(oldname, newname string) error`：創建一個符號鏈接。
+38. `TempDir() string`：返回用於臨時文件的目錄的路徑。
+39. `TempFile(dir, prefix string) (*File, error)`：在指定的目錄中創建一個臨時文件。
+40. `Truncate(name string, size int64) error`：截斷指定文件的大小。
+41. `Unsetenv(key string) error`：刪除指定的環境變量。
+42. `UserCacheDir() (string, error)`：返回當前用戶的快取目錄。
+43. `UserConfigDir() (string, error)`：返回當前用戶的配置文件目錄。
+44. `UserHomeDir() (string, error)`：返回當前用戶的家目錄。
+
+每個函數都提供了不同的操作系統功能，使開發人員能夠訪問和更改文件系統、環境變量和進程信息等。
