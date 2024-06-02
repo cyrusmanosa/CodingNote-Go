@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"math/cmplx"
 )
@@ -70,4 +71,28 @@ func PrintF() {
 	fmt.Printf("%.2f\n", P)  // %.2f  => 小數點後兩個位
 	fmt.Printf("%6.2f\n", P) // %6.2  => 6個字位表示，小數點後兩個位
 	fmt.Printf("%g\n", P)    // %g    => 指數根據需要，只表示必要的數字
+}
+
+type User struct {
+	Nickname string `json:"nickname"`
+	Old      int    `json:"old"`
+	Birth    string `json:"birth"`
+	State    string `json:"state"`
+}
+
+func PrintJson() {
+	user := User{
+		Nickname: "taisei",
+		Old:      16,
+		Birth:    "12/04",
+		State:    "nagano",
+	}
+
+	userJSON, err := json.Marshal(user)
+	if err != nil {
+		fmt.Println("Error marshalling JSON:", err)
+		return
+	}
+
+	fmt.Println(string(userJSON))
 }
