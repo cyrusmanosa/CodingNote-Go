@@ -13,6 +13,7 @@ func main() {
 	// V1()
 	// V2()
 	V3()
+	// V4()
 }
 func V1() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -55,6 +56,7 @@ func V3() {
 
 	fmt.Print("Enter the length of the array: ")
 	scanner.Scan()
+
 	length, err := strconv.Atoi(scanner.Text())
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "invalid length:", err)

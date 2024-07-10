@@ -16,7 +16,7 @@ const (
 )
 
 func main() {
-	sa := option.WithCredentialsFile("./testgolang-98d3d-firebase-adminsdk-kqdra-1e3a88c150.json")
+	sa := option.WithCredentialsFile("../../testgolang-98d3d-firebase-adminsdk-kqdra-f289ad5970.json")
 	app, err := firebase.NewApp(context.Background(), nil, sa)
 	if err != nil {
 		panic(fmt.Errorf("error initializing app: %v", err))
@@ -29,35 +29,35 @@ func main() {
 	defer client.Close()
 
 	data := map[string]interface{}{
-		"id":   2123,
+		"id":   1111123333,
 		"any":  "dddddd",
 		"name": "dddddadadsad",
 	}
 
-	// Add document of auto id
-	// docRef, _ := AddAutoIDDocument(client, data)
+	// ---------------------Add document of auto id---------------------
+	docRef, _ := AddAutoIDDocument(client, data)
 	// AddAutoIDDocument(client, data)
 
-	// Add document of set id
-	AddSetIDDocument(client, "docName1", data)
+	// --------------------- Add document of set id---------------------
+	// AddSetIDDocument(client, "docName1", data)
 
-	// Get One Data
-	// re, _ := GetOneDocument(client, docRef.ID)
-	// fmt.Println(re)
+	// ---------------------Get One Data---------------------
+	re, _ := GetOneDocument(client, docRef.ID)
+	fmt.Println(re)
 
-	// Get all Document
+	// ---------------------Get all Document---------------------
 	// allre := GetAllDocument(client)
 	// fmt.Println(allre)
 
-	// Update Data
+	// ---------------------Update Data---------------------
 	// updates := []firestore.Update{
 	// 	{Path: "any", Value: "updatedValue"},
 	// 	{Path: "newField", Value: "newValue"}, // Add a new field
 	// }
 	// UpdateDocument(client, "docName1", updates)
 
-	// // Delete Data
-	DeleteDocument(client, "docName1")
+	// ---------------------Delete Data---------------------
+	// DeleteDocument(client, "docName1")
 
 }
 
