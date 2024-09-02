@@ -10,6 +10,15 @@ import (
 // os.Args 是數量不定的字串Slice參數
 // os.Args 的第一個參數是執行的程式名稱(No Value)，第二個參數起才是真的參數。
 
+func getArgs0() (string, string) {
+	args := os.Args
+	A := fmt.Sprintln("A:", args)
+	fmt.Println("0番地是執行Programme的Location")
+	B := fmt.Sprintln("B(番地:1):", args[1])
+
+	return A, B
+}
+
 func getArgs1() []string {
 	if len(os.Args) < 1 { // 確保os.Args不是空
 		fmt.Println("您沒有輸入參數,至少需傳入1個參數")
@@ -28,6 +37,7 @@ func getArgs1() []string {
 // 將傳入的切片內的元素一一遍歷，找出長度最長的字串
 func findLongestString1(argsSlice []string) string {
 	var longestString string // 建立一個字串型別的空字串
+
 	for i := 0; i < len(argsSlice); i++ {
 		if len(argsSlice[i]) > len(longestString) { // 如果argsSlice 索引值內的字串長度 > longestString 這個字串
 			longestString = argsSlice[i] // 將 longestString 的值改為 argsSlice[i] 的值
@@ -35,6 +45,7 @@ func findLongestString1(argsSlice []string) string {
 	}
 	return longestString // 回傳長度最長的字串
 }
+
 func getArgs2() []string {
 	if len(os.Args) < 1 {
 		fmt.Println("您沒有輸入參數，至少需傳入1個參數")
@@ -80,6 +91,9 @@ func newSlice() string {
 }
 
 func main() {
+	fmt.Println("\n-----os.Args Basic1-----")
+	fmt.Println(getArgs0()) // 印出不同
+	fmt.Println("\n-----os.Args Basic2-----")
 	fmt.Println(getArgs1())                     // 印出新切片
 	fmt.Println(findLongestString1(getArgs1())) // 找出切片內長度最長的字串元素
 	fmt.Println("\n-----append-----")
@@ -87,6 +101,4 @@ func main() {
 	fmt.Println(addMultipleArgs(getArgs2())) // 找出切片內長度最長的字串元素
 	fmt.Println("\n-----從切片或陣列中擷取新的切片-----")
 	fmt.Println(newSlice())
-	fmt.Println("\n-----append-----")
-
 }
