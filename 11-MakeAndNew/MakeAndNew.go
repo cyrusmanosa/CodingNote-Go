@@ -1,14 +1,12 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
-	"sync"
 )
 
 func main() {
 	fmt.Println("\n-----NEW------")
-	new1()
+	make0()
 	fmt.Println("\n-----MAKE1-----")
 	make1()
 	fmt.Println("\n-----MAKE2-----")
@@ -20,13 +18,11 @@ func main() {
 // new 是不能加入特定的初始化值
 // foo 沒有特別的用途
 type SyncedBuffer struct {
-	lock   sync.Mutex
-	buffer bytes.Buffer
-	foo    int
-	bar    string
+	foo int
+	bar string
 }
 
-func new1() {
+func make0() {
 	p := new(SyncedBuffer)
 	fmt.Println("foo:", p.foo)
 	fmt.Println("bar:", p.bar)
@@ -37,6 +33,7 @@ func new1() {
 // 1. 一個隱藏陣列可能同時被多個切片指向 ＝》可能會 連同一個底層陣列的其他切片元素值一同被更改
 // 2. 當切片擴充到超過本來隱藏陣列容量時，隱藏陣列指向的地方會不同
 // 3. make 用於三個地方，分別是 slice, map 及 channel
+
 func make1() {
 	// make
 	foobar := make(map[string]string)

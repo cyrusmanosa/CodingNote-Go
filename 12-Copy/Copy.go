@@ -21,9 +21,12 @@ func sameHideArray() (int, int, int) {
 
 // copy()，使其指向不同隱藏陣列
 var slice4 = []int{1, 2, 3, 4, 5} // 在外層定義一個 slice4 的切片
+
 func appendToOriginArray01() (int, int) {
+	fmt.Println("Slice4 : ", slice4)
 	slice5 := make([]int, 5, 10) // 定義一個長度為 5 ，容量為 10 的初始化切片 slice5
 	copy(slice5, slice4)         // 使用內建函式 copy() 將 slice5 當作目標切片， slice4 的值複製進 slice5 ，因為內建函式 copy() 會使其用不同隱藏陣列
+	fmt.Println("SLice4 copy to Slice5: ", slice5)
 
 	slice5[0] = 77 // 更改 slice5 切片索引值 0 的值為 77
 	return slice4[0], slice5[0]
@@ -48,7 +51,7 @@ func appendToOriginArray02() ([]int, []int, int) {
 // <切片>[<起始索引值>:<結束索引值(不含)>:<容量>]
 
 func main() {
-	fmt.Println("\n-----copy(<目標切片>, <來源切片>)------")
+	fmt.Println("\n-----<目標切片>, <來源切片>------")
 	s1, s2, s3 := sameHideArray()
 	fmt.Println("指向同一個隱藏陣列，且更改中一個的值：", "slice1[0]=", s1, "; slice2[0]=", s2, "; slice3[0]=", s3)
 
