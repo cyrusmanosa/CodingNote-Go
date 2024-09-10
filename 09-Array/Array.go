@@ -40,6 +40,15 @@ func murmur() string {
 	return fmt.Sprintln(arr[0], arr[4], arr[1], arr[3], arr[2]) // fmt.Sprintln 將字串格式化
 }
 
+// / array5 result ( 在沒有 Return 的情況下 )
+//
+//	a:  [another string]	<- 成功
+//	b:  [stringB]			<- 失敗
+func array5(a, b []string) {
+	a[0] = "another string"
+	b = append(b, "another string")
+}
+
 func main() {
 	fmt.Println("array1:", array1())
 	fmt.Println("array2:", array2())
@@ -65,4 +74,11 @@ func main() {
 
 	fmt.Println("\n-----讀取陣列元素值------")
 	fmt.Print(murmur()) // 利用索引值將陣列內的字串，拼成我的 murmur
+	fmt.Println("\n---------------Array5---------------")
+	a := []string{"stringA"}
+	b := []string{"stringB"}
+	array5(a, b)
+	fmt.Println("a: ", a)
+	fmt.Println("b: ", b)
+
 }
