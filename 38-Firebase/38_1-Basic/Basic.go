@@ -33,7 +33,7 @@ func main() {
 		"any":  "dddddd",
 		"name": "dddddadadsad",
 	}
-
+	// 
 	// ---------------------Add document of auto id---------------------
 	docRef, _ := AddAutoIDDocument(client, data)
 	// AddAutoIDDocument(client, data)
