@@ -30,13 +30,13 @@ const numA int = 100
 
 func main() {
 	// GO 自動判斷值的變數型態
-	屌你老尾 := "fuckyou"
+	屌你老 := "fuckyou"
 	name := "Cyrus"
 	j := 100
 
 	fmt.Println(j + numA)
 	fmt.Println("Hello world \n And ") // \n 分行
-	fmt.Println(屌你老尾)
+	fmt.Println(屌你老)
 	fmt.Println(len(name))
 	fmt.Println(name[1])
 	fmt.Println(name[0:2])

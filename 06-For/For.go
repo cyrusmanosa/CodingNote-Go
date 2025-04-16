@@ -33,13 +33,10 @@ func Type2() {
 	}
 
 	for key, value := range myFavorite {
-		// or
-		// for _, value := range myFavorite
 		fmt.Println("\nkey:", key, " = value:", value)
-		// or
-		fmt.Println(key)
-		fmt.Println(value)
 	}
+
+	fmt.Println(" ")
 
 	for i, value := range favoriteFruit {
 		fmt.Println("index:", i, "value:", value)

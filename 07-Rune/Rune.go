@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-// 特定文字的切片
-
+// rune 特定文字的切片 => 正確處理非英文文字
 func main() {
 	myName := "Krystal_奇犽老婆" // 我的名字是 12 個字元組成（含底線）
 
 	fmt.Println("\n-----Byte and Type-----")
+
 	for i := 0; i < len(myName); i++ {
 		fmt.Print("byte:", myName[i]) // String 配列型態Print ＝》 byte
 		fmt.Printf(" type: %T  \n", myName)
