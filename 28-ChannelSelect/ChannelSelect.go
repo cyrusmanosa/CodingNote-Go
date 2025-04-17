@@ -42,8 +42,8 @@ func SelectMistake() {
 		fmt.Println("random 01")
 	case <-ch:
 		fmt.Println("random 02")
-		// default:							// 改正Error
-		//     fmt.Println("exit")
+	default:			
+		fmt.Println("exit")
 	}
 }
 

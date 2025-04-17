@@ -16,7 +16,7 @@ func main() {
 // new(#) 宣告會直接拿到儲存位置，並且配置 Zero Value (初始化)，也就是數字型態為 0
 // new 可以快速的達到初始化
 // new 是不能加入特定的初始化值
-// foo 沒有特別的用途
+
 type SyncedBuffer struct {
 	foo int
 	bar string
@@ -24,9 +24,15 @@ type SyncedBuffer struct {
 
 func make0() {
 	p := new(SyncedBuffer)
+	k := SyncedBuffer{}
 	fmt.Println("foo:", p.foo)
 	fmt.Println("bar:", p.bar)
-	fmt.Printf("%#v\n", p)
+	fmt.Println("------------ P --------------")
+	fmt.Printf("p 值: %#v\n", p)
+	fmt.Printf("p type: %T\n", p)
+	fmt.Println("------------ K --------------")
+	fmt.Printf("k 值: %#v\n", k)
+	fmt.Printf("k type: %T\n", k)
 }
 
 // make() 長度參數是必填設定
@@ -44,7 +50,7 @@ func make1() {
 }
 
 func make2() {
-	var slice1 []string          // 用 var 建立切片 slice1
+	var slice1 []string
 	slice2 := make([]bool, 5)    // 用 make() 函式建立 bool 型別，長度為 5 的切片( 沒設容量,容量預設跟長度一樣為 5 )
 	slice3 := make([]int, 5, 10) // 用 make() 函式建立 int 型別，長度為 5 ，容量為 10 的切片
 

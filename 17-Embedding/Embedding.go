@@ -5,12 +5,12 @@ import "fmt"
 // <結構變數>.<內嵌結構型別>.<欄位名稱>
 // <結構變數>.<提升的欄位名稱>
 
-type id int          // 自訂一個名為 name 的字串型別
-type hunter struct { // 定義名為 hunter 的結構型別
+type id int         
+type hunter struct {
 	role string
 	age  int
 }
-type skill struct { // 定義名為 skill 的結構型別
+type skill struct {
 	ability string
 	clan    string
 }

@@ -9,7 +9,7 @@ import (
 
 func Print1(s string) {
 	for i := 0; i < 50; i++ {
-		time.Sleep(time.Microsecond * 1) // 控制時間搶先Print
+		time.Sleep(time.Microsecond * 1)
 		fmt.Print(s)
 	}
 }
@@ -45,7 +45,6 @@ func main() {
 	time.Sleep(time.Second * 2)
 
 	fmt.Println("\n-----(sync.WaitGroup)------")
-
 	// Add (i int) : 計數器增加i
 	// Done() : 計數器-1，相當於Add(-1)
 	// Wait() : 阻塞直到所有的WaitGroup數量變為零，即計數器變為0
@@ -55,5 +54,4 @@ func main() {
 	go Print3("O")
 	fmt.Println("waiting to finish")
 	wg.Wait() // 等待WaitGroup執行完成
-	fmt.Println("\nfinish Program")
 }

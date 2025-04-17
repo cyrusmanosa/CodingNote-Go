@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	var name *string // 用 var 宣告 name 指標變數，初始值為 nil (not 0) - 特殊型態
+	var name *string // 用 var 宣告 name 指標變數，初始值為 nil
 
 	if name == nil {
 		fmt.Println("OMG 這個 name 是 nil 值")

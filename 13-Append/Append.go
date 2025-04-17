@@ -2,9 +2,8 @@ package main
 
 import "fmt"
 
-// 用 append() 把本來的切片附加到新切片
-
-var slice1 = []int{1, 2, 3, 4, 5} // 在外層定義一個 slice1 的切片
+var slice1 = []int{1, 2, 3, 4, 5} 
+var slice4 = make([]int, 5, 10) 
 
 func appendToNewArray() (int, int) {
 	slice2 := slice1                 // 複製 slice1 切片為 slice2 (會使兩者指向同一個隱藏陣列)
@@ -20,7 +19,6 @@ func appendToNewArray() (int, int) {
 	return slice1[0], slice2[0]
 }
 
-var slice4 = make([]int, 5, 10) // 在外層定義一個長度為 5 ，容量為 10 的初始化切片
 
 func appendToOriginArray() (int, int) {
 	slice5 := slice4                 // 複製 slice1 切片為 slice2 (會使兩者指向同一個隱藏陣列)

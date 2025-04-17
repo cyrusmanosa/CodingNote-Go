@@ -5,24 +5,33 @@ import (
 	"math"
 )
 
-type I interface{ M() }
+type I interface{ 
+	M() 
+}
 
 type T struct{ S string }
+func (t *T) M() { 
+	fmt.Println(t.S) 
+}
 
-func (t *T) M() { fmt.Println(t.S) }
 
 type F float64
-
-func (f F) M() { fmt.Println(f) }
+func (f F) M() { 
+	fmt.Println(f) 
+}
 
 //--------------------------
 
-type Salaried interface{ getSalary() int }
+type Salaried interface{ 
+	getSalary() int 
+}
+type Salary struct{ 
+	basic, insurance, allowance int 
+}
 
-// Salary 實作了 getSalary() 的方法，因此可以算是 Salaried type（polymorphism）
-type Salary struct{ basic, insurance, allowance int }
-
-func (s Salary) getSalary() int { return s.basic + s.insurance + s.allowance }
+func (s Salary) getSalary() int { 
+	return s.basic + s.insurance + s.allowance 
+}
 
 type Employee struct {
 	firstName, lastName string

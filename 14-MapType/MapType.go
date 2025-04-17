@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-// map 是一種雜湊表 (hashmap)
-// key 不能是切片
 // 定義：map[<key 型別>]<value 型別>{
 // 		<key 1>:<value 1>, <key 2>:<value 2>, ..., <key N>:<value N>}
 
@@ -27,7 +25,7 @@ func map_part01() {
 	favoriteTitle, exists := myFavorite["fruit"] // 讀取 myFavorite 這個 map 的 key 值 fruit 的 value, exists專用
 	if exists {                                  // 如果 fruit 這個 key 有相對應的 value
 		fmt.Println("目前列表：")
-		for key, value := range myFavorite { // 用 for range 走訪
+		for key, value := range myFavorite { 
 			fmt.Println("key:", key, " = value:", value)
 		}
 	} else {

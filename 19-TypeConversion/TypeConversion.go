@@ -6,7 +6,6 @@ import (
 )
 
 // 若想要將 int64 變數轉成 int8 ，注意有沒有可能發生溢位的錯誤 int64 > int8
-// 同java一樣
 
 func change() string {
 	var maxInt8 int8 = 127

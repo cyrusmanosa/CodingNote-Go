@@ -4,10 +4,12 @@ import (
 	"fmt"
 )
 
-// --------------------------------------- sameHideArray -------------------------------------------------------
 
 // copy(<目標切片>, <來源切片>)
-var slice1 = []int{1, 2, 3, 4, 5} // 在外層定義一個 slice1 的切片
+
+var slice1 = []int{1, 2, 3, 4, 5} 
+var slice4 = []int{1, 2, 3, 4, 5}
+var slice6 = []int{1, 2, 3}
 
 func sameHideArray() (int, int, int) {
 	slice2 := slice1    // 複製 slice1 切片為 slice2 (會使兩者指向同一個隱藏陣列)
@@ -17,10 +19,6 @@ func sameHideArray() (int, int, int) {
 	return slice1[0], slice2[0], slice3[0]
 }
 
-// --------------------------------------- appendToOriginArray01 ----------------------------------------------------------------------
-
-// copy()，使其指向不同隱藏陣列
-var slice4 = []int{1, 2, 3, 4, 5} // 在外層定義一個 slice4 的切片
 
 func appendToOriginArray01() (int, int) {
 	fmt.Println("Slice4 : ", slice4)
@@ -32,9 +30,6 @@ func appendToOriginArray01() (int, int) {
 	return slice4[0], slice5[0]
 }
 
-// ----------------------------------------- appendToOriginArray02 -----------------------------------------------------------
-
-var slice6 = []int{1, 2, 3} // 在外層定義一個長度為 3 的切片
 
 func appendToOriginArray02() ([]int, []int, int) {
 	slice7 := make([]int, 5)   // 定義一個長度為 5 ，容量為 10 的初始化切片 slice2
@@ -43,8 +38,6 @@ func appendToOriginArray02() ([]int, []int, int) {
 	slice7[0] = 77 // 更改 slice2 切片索引值 0 的值為 77
 	return slice6, slice7, cl
 }
-
-// --------------------------------------------------------------------------------------------------------------------------------
 
 // slice8 := []int{1, 2, 3, 4, 5}
 // slice9 := append(slice1[:0:0], slice1...)
