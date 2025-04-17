@@ -10,14 +10,13 @@ import (
 
 // 加上 * 宣告一個指標變數
 
-type id int // 自訂一個名為 name 的字串型別
-
-type hunter struct { // 定義名為 hunter 的結構型別
+type id int 
+type hunter struct {
 	role    string
 	ability string
 }
 
-type hunter2 struct { // 定義名為 hunter 的結構型別
+type hunter2 struct { 
 	role    string
 	ability string
 }

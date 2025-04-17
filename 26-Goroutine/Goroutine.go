@@ -52,6 +52,7 @@ func main() {
 	wg.Add(2) // 添加2筆goroutine訂單
 	go Print3("X")
 	go Print3("O")
+	
 	fmt.Println("waiting to finish")
 	wg.Wait() // 等待WaitGroup執行完成
 }

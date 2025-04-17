@@ -9,7 +9,7 @@ import "fmt"
 // 可以搭配 defer 敘述延後執行程式碼
 
 func addFunc() func() int {
-	i := 0              // 定義 i 為匿名函式的父函式內的變數
+	i := 0            
 	return func() int { // 回傳一個匿名函式
 		i++
 		return i
